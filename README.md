@@ -1,1 +1,1 @@
-# -amirxonxudoyberdiyev099-lgtm.github.io
+# amirxonxudoyberdiyev099-lgtm.github.io
