@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio · Sun’iy intellekt talabasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef0f7; --surface:#ffffff; --ink:#1b1f3b; --muted:#555b7a; --line:#cdd2e4;
+  --a:#e4572e; --b:#17a398; --c:#4c6ef5;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#12152b;--surface:#1b2040;--ink:#eceefb;--muted:#a3a9c9;--line:#2f3560;--a:#ff7a52;--b:#3cd1c3;--c:#8aa0ff}
+}
+:root[data-theme="dark"]{--bg:#12152b;--surface:#1b2040;--ink:#eceefb;--muted:#a3a9c9;--line:#2f3560;--a:#ff7a52;--b:#3cd1c3;--c:#8aa0ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 "Newsreader",Georgia,serif}
+h1,h2,h3,.btn,nav{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:500}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:40px 0 80px}
+h1{font-size:clamp(2.6rem,6.5vw,5rem);line-height:1;letter-spacing:-.03em;font-weight:800;margin:0 0 22px}
+.lead{max-width:34ch;color:var(--muted);font-size:1.15rem;margin:0 0 28px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:500;border:0;cursor:pointer;font-size:1rem}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.lab{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px}
+canvas{display:block;width:100%;height:auto;aspect-ratio:1/1;touch-action:manipulation}
+.cap{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:10px;font-size:.9rem;color:var(--muted)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.02em;margin:0 0 24px;line-height:1.1}
+.top{position:relative;background:var(--bg) url(fon.jpg) center/cover no-repeat}
+.top::before{content:"";position:absolute;inset:0;background:var(--bg);opacity:.82}
+.top>.wrap{position:relative}
+.about{display:grid;grid-template-columns:240px 1fr 1fr;gap:40px}
+.photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0 0 28px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0}
+.about p{margin:0 0 1em;max-width:60ch}
+.projects{display:grid;gap:18px}
+.project{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
+.project:first-child{border-top:0;padding-top:0}
+.project h3{margin:0;font-size:1.35rem;line-height:1.2}
+.project p{margin:0 0 10px;max-width:62ch}
+.tags{display:flex;gap:8px;flex-wrap:wrap;font-family:"Bricolage Grotesque",sans-serif;font-size:.85rem}
+.tags span{padding:3px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skills span{padding:8px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-family:"Bricolage Grotesque",sans-serif}
+footer{padding:48px 0 64px;border-top:1px solid var(--line)}
+footer p{margin:0 0 18px;max-width:46ch}
+@media (max-width:760px){
+  .hero,.about{grid-template-columns:1fr}
+  .project{grid-template-columns:1fr;gap:6px}
+  nav ul{gap:14px;font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+<nav aria-label="Asosiy menyu">
+  <strong>Amirxon Xudoyberdiyev</strong>
+  <ul><li><a href="#haqimda">Haqimda</a></li><li><a href="#loyihalar">Loyihalar</a></li><li><a href="#aloqa">Aloqa</a></li></ul>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Ta’limni sun’iy intellekt bilan yengillashtiraman.</h1>
+    <p class="lead">Men sun’iy intellekt yo’nalishida o’qiyman. Ma’lumotdan foydali narsa chiqarishni yaxshi ko’raman.</p>
+    <div class="row"><a class="btn" href="#loyihalar">Loyihalarni ko’rish</a><a class="btn ghost" href="#aloqa">Bog’lanish</a></div>
+  </div>
+  <div class="lab">
+    <canvas id="cv" width="520" height="520" role="img" aria-label="Klasterlash namunasi: nuqtalar uch guruhga ajraladi"></canvas>
+    <div class="cap"><span id="st">Nuqtalar hali guruhlanmagan</span>
+      <span class="row"><button class="btn" id="go">Guruhlash</button><button class="btn ghost" id="rs">Qayta aralashtirish</button></span></div>
+  </div>
+</header>
+</div></div>
+
+<div class="wrap">
+<section id="haqimda">
+  <h2>Haqimda</h2>
+  <div class="about">
+    <img class="photo" src="rasm.jpg" alt="Mening rasmim" onerror="this.style.display='none'">
+    <div>
+      <p>Men [Termiz davlat pedagogika inisitut]da sun’iy intellekt yo’nalishining [1]-kurs talabasiman. Dasturlashni o’rganish, ma’lumotlar tahlili va tabiiy tilni qayta ishlashga qiziqaman.</p>
+      <p>Maqsadim: o’zbek tilidagi ma’lumotlar bilan ishlaydigan amaliy AI vositalari yaratish.</p>
+    </div>
+    <div>
+      <h3>Ma’lumotlar</h3>
+      <dl class="facts">
+        <dt>Ism</dt><dd>Amirxon Xudoyberdiyev</dd>
+        <dt>Shahar</dt><dd>Termiz</dd>
+        <dt>O’qish</dt><dd>[Termiz davlat pedagogika inisitut], sun’iy intellekt</dd>
+        <dt>Kurs</dt><dd>[1]-kurs</dd>
+        <dt>Tillar</dt><dd>O’zbek, ingliz, rus</dd>
+        <dt>Qiziqish</dt><dd>Mashinali o’rganish, ma’lumotlar tahlili</dd>
+      </dl>
+      <h3>Ko’nikmalar</h3>
+      <div class="skills"><span>Python</span><span>PyTorch</span><span>scikit-learn</span><span>Pandas</span><span>SQL</span><span>Git</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="loyihalar">
+  <h2>Loyihalar</h2>
+  <div class="projects">
+    <article class="project">
+      <h3>Test savollarini avtomatik yaratish.</h3>
+      <div><p>O’qituvchi dars matnini yuklaydi, AI undan test savollari va javob variantlarini tuzadi. O’qituvchilarning ko’p vaqtini tejaydi.</p>
+      <div class="tags"><span>Python</span><span>Klassifikatsiya</span></div></div>
+    </article>
+    <article class="project">
+      <h3>Talabalar uchun Telegram bot.</h3>
+      <div><p>Dars jadvali, qabul, stipendiya va hujjatlar bo’yicha savollarga o’zbek tilida javob beradi. Dekanat va o’quv bo’limining ishini yengillashtiradi.</p>
+      <div class="tags"><span>PyTorch</span><span>NLP</span></div></div>
+    </article>
+    <article class="project">
+      <h3>O’zbek tilida imlo va antiplagiat tekshiruvchi.</h3>
+      <div><p>Talabalarning referat va kurs ishlarini tekshiradi. O’zbek tilida bunday vositalar kam, shuning uchun eng noyob loyihalardan biri.</p>
+      <div class="tags"><span>Pandas</span><span>Vizualizatsiya</span></div></div>
+    </article>
+  </div>
+</section>
+
+<footer id="aloqa">
+  <h2>Aloqa
+    950410208</h2>
+  <p>Hamkorlik yoki stajirovka bo’yicha yozing, javob beraman.</p>
+  <div class="row"><a class="btn" href="mailto:email@example.com">amirxonxudoyberdiyev099@gmail.com</a><a class="btn ghost" href="#">GitHub</a><a class="btn ghost" href="#">LinkedIn</a><a class="btn ghost" href="#">Telegram</a></div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var cv=document.getElementById('cv'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  var st=document.getElementById('st'),pts=[],cen=[],timer=null,K=3;
+  function css(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
+  function reset(){
+    clearInterval(timer);timer=null;cen=[];pts=[];
+    var hubs=[[.28,.3],[.72,.38],[.45,.76]];
+    for(var i=0;i<90;i++){var h=hubs[i%3];
+      pts.push({x:(h[0]+(Math.random()-.5)*.36)*W,y:(h[1]+(Math.random()-.5)*.36)*H,k:-1});}
+    st.textContent='Nuqtalar hali guruhlanmagan';draw();
+  }
+  function draw(){
+    var cols=[css('--a'),css('--b'),css('--c')];
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(function(p){ctx.beginPath();ctx.arc(p.x,p.y,7,0,6.283);
+      ctx.fillStyle=p.k<0?css('--line'):cols[p.k];ctx.fill();});
+    cen.forEach(function(c,i){ctx.beginPath();ctx.arc(c.x,c.y,13,0,6.283);
+      ctx.lineWidth=3;ctx.strokeStyle=css('--ink');ctx.stroke();});
+  }
+  function step(){
+    var moved=false;
+    pts.forEach(function(p){var b=0,bd=1e9;
+      cen.forEach(function(c,i){var d=(p.x-c.x)*(p.x-c.x)+(p.y-c.y)*(p.y-c.y);if(d<bd){bd=d;b=i}});
+      if(p.k!==b){p.k=b;moved=true}});
+    cen.forEach(function(c,i){var sx=0,sy=0,n=0;
+      pts.forEach(function(p){if(p.k===i){sx+=p.x;sy+=p.y;n++}});
+      if(n){c.x=sx/n;c.y=sy/n}});
+    draw();
+    if(!moved){clearInterval(timer);timer=null;st.textContent='Tayyor: model 3 ta guruh topdi'}
+  }
+  function go(){
+    if(timer)return;
+    cen=[];for(var i=0;i<K;i++){var p=pts[Math.floor(Math.random()*pts.length)];cen.push({x:p.x,y:p.y})}
+    st.textContent='Model o’rganmoqda…';
+    timer=setInterval(step,650);step();
+  }
+  document.getElementById('go').addEventListener('click',go);
+  document.getElementById('rs').addEventListener('click',reset);
+  if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+  reset();
+})();
+</script>
+</body>
+</html>
